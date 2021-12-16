@@ -584,7 +584,7 @@ footer{
     .roadmap:hover{
         box-shadow: none;
     }
-    .about-us , .image-box ,.roadmap, .image-gallery{
+    .about-us, .about-text, .image-box ,.roadmap, .image-gallery{
         width: 100%;
         box-shadow: none;
     }
@@ -594,6 +594,7 @@ footer{
     .second-section{
         width: 95%;
         padding-bottom: 2rem;
+        padding-top: 5rem;
     }
     .topbar > *{
         margin: auto;

@@ -261,14 +261,13 @@ a {
 
 .section-border {
     position: absolute;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-
+    display: block;
+    height: 200px;
+    transform: translateY(-30%);
+    background-image: url(img/border-3.png);
+    background-repeat: round no-repeat;
+    width: 100%;
+    z-index: 2;
 }
 
 .section-border img {

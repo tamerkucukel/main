@@ -502,6 +502,7 @@ a {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     text-align: center;
+    border-radius: 25px;
 }
 .faq h1{
     text-align: center;

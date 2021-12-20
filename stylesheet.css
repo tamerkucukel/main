@@ -698,12 +698,12 @@ footer {
     font-style: normal;
 }
 
-.fa-discord:hover {
+.dc:hover{
     color: #7289da;
     transform: scale(1.2);
 }
 
-.fa-twitter:hover {
+.tw:hover{
     color: #1DA1F2;
     transform: scale(1.2);
 }
@@ -713,7 +713,7 @@ footer {
     transform: scale(1.2);
 }
 
-.fab {
+.dc , .tw, .fa-medium-m {
     transition-duration: 500ms;
 }
 

@@ -78,7 +78,7 @@ a {
 #first-section {
     display: block;
     background-image: url(img/back-s-10.jpg);
-    background-size:cover;
+    background-size: cover;
     box-shadow: inset 0px 0px 1000px rgba(0, 0, 0, 1);
     background-position: center;
     width: 100%;
@@ -108,24 +108,26 @@ a {
     25% {
         transform: rotate(-10deg);
     }
-    
+
     50% {
         transform: rotate(0deg);
     }
-    
+
     75% {
         transform: rotate(10deg);
     }
-    
+
     100% {
         transform: rotate(0deg);
     }
 }
-.highlight{
+
+.highlight {
     font-size: var(--highlight-size);
     text-shadow: var(--text-border-white);
     color: var(--red);
 }
+
 .btn::after {
     content: '';
     position: absolute;
@@ -142,8 +144,156 @@ a {
 .btn:hover::after {
     width: 100%;
 }
-#countdown{
+
+#countdown {
     font-size: var(--h2-size);
+}
+.social-menu {
+	position: fixed;
+	bottom: 30px;
+	left: 30px;
+	width: 70px;
+	height: 70px;
+    z-index: 10;
+  
+}
+
+.menu-item, .social-menu-open-button {
+	background: #fff;
+	border-radius: 100%;
+	width: 70px;
+	/*describes the size of the circle*/
+	height: 70px;
+	position: absolute;
+	line-height: 70px;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transition: -webkit-transform ease-out 200ms;
+	transition: -webkit-transform ease-out 200ms;
+	transition: transform ease-out 200ms;
+	transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+	text-align: center;
+	color: white;
+}
+.social-menu-open-button{
+    border: solid var(--red) 4px;
+    outline: solid white 4px;
+}
+
+.social-menu {
+	font-size:3em;
+}
+
+.social-menu-open {
+	display:none; /*makes the checkbox hidden*/
+}
+
+.line {
+   width: 25px;
+   height: 3px;
+   background: #596778;
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-left: -12.5px;
+   margin-top: -1.5px;
+   -webkit-transition: -webkit-transform 200ms;
+   transition: -webkit-transform 200ms;
+   transition: transform 200ms;
+   transition: transform 200ms, -webkit-transform 200ms;
+}
+/*It is these transformations that make the lines stacked*/
+.line-1 {
+   -webkit-transform: translate3d(0, -8px, 0);
+   transform: translate3d(0, -8px, 0);
+}
+
+.line-2 {
+   -webkit-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+}
+
+.line-3 {
+   -webkit-transform: translate3d(0, 8px, 0);
+   transform: translate3d(0, 8px, 0);
+}
+
+/*Describes the transformation of the top line*/
+.social-menu-open:checked + .social-menu-open-button .line-1 {
+   -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+   transform: translate3d(0, 0, 0) rotate(45deg);
+}
+/*describes the transformation of the middle line*/
+.social-menu-open:checked + .social-menu-open-button .line-2 {
+   -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+   transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+/*describes the transformation of the top line*/
+.social-menu-open:checked + .social-menu-open-button .line-3 {
+   -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+   transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+.menu-item:hover { /*hover effect for the bubbles*/
+   background: #EEEEEE;
+   color: #3290B1;
+}
+
+.social-menu-open-button {
+  z-index: 2;
+	transition-duration: 400ms;
+	transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+	cursor: pointer;
+	box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+}
+
+.social-menu-open-button:hover {
+	-webkit-transform:scale(1.2, 1.2) translate3d(0,0,0);
+	transform: scale(1.2, 1.2) translate(0,0,0);
+}
+
+.social-menu-open:checked + .social-menu-open-button{
+	transition-timing-function: linear;
+	transition-duration: 200ms;
+	transform: scale(0.8, 0.8) translate3d(0,0,0);
+}
+
+.social-menu-open:checked ~ .menu-item { /* the x ~ y selectors selects every y that is preceeded by an x*/
+	transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+}
+
+/*Describes the bubble transition*/
+.social-menu-open:checked ~ .menu-item:nth-child(3) { /* :nth(n) selector matches every nth child of its parent*/
+	transition-duration: 180ms;
+	transform: translate3d(0, -100px, 0);
+}
+
+.social-menu-open:checked ~ .menu-item:nth-child(4) {
+   transition-duration: 280ms;
+   transform: translate3d(90px, -50px, 0);
+}
+
+.discord {
+   background-color: #5865F2;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.discord:hover {
+   color: #5865F2;
+   text-shadow: none;
+}
+
+.twitter {
+   background-color: #1da1f2;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.twitter:hover {
+   color: #1da1f2;
+   text-shadow: none;
 }
 /* Navigation Bar is handled from here*/
 
@@ -211,6 +361,7 @@ a {
     text-shadow: var(--text-border-red);
     font-size: 2.5rem;
 }
+
 .arrow-place {
     position: relative;
     width: max-content;
@@ -371,7 +522,8 @@ a {
     outline-color: var(--gray);
     outline-style: solid;
 }
-.fourth-section{
+
+.fourth-section {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
@@ -379,7 +531,8 @@ a {
     padding-top: 8rem;
     padding-bottom: 6rem;
 }
-.roadmap{
+
+.roadmap {
     grid-column: 1 / span 3;
     background-color: rgba(255, 255, 255, 0.8);
     width: 90%;
@@ -390,12 +543,14 @@ a {
     border: 10px solid var(--red);
     box-shadow: 0px 0px 30px 7px rgba(0, 0, 0, 0.5);
     transition-duration: 700ms;
-    
+
 }
-.roadmap:hover{
+
+.roadmap:hover {
     box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.7);
 }
-.roadmap h2{
+
+.roadmap h2 {
     width: 80%;
     margin: auto;
     text-align: center;
@@ -404,7 +559,7 @@ a {
     color: #444;
 }
 
-.roadmap ul{
+.roadmap ul {
     list-style-type: none;
     margin: 0;
     padding-bottom: 2rem;
@@ -415,7 +570,8 @@ a {
     margin-bottom: 3rem;
     border-radius: 25px;
 }
-.roadmap ul li{
+
+.roadmap ul li {
     direction: rtl;
     position: relative;
     font-size: var(--p-size);
@@ -425,9 +581,10 @@ a {
     color: var(--gray-2);
     margin-right: 2rem;
     margin-left: 2rem;
-}   
-.roadmap ul li::after{
-    content:'';
+}
+
+.roadmap ul li::after {
+    content: '';
     position: absolute;
     width: 50%;
     height: 6px;
@@ -437,21 +594,30 @@ a {
     left: 25%;
     transform: translateX(-50%);
 }
-.r2::before, .r3::before,.r4::before,.r5::before,.r6::before,.r7::before,.r8::before{
+
+.r2::before,
+.r3::before,
+.r4::before,
+.r5::before,
+.r6::before,
+.r7::before,
+.r8::before {
     content: url(img/gift.png);
     position: absolute;
     top: 50%;
     left: -3rem;
     transform: translateY(-50%);
 }
-.r1::before{
+
+.r1::before {
     content: url(img/gift-green.png);
     position: absolute;
     top: 50%;
     left: -3rem;
     transform: translateY(-50%);
 }
-.fifth-section{
+
+.fifth-section {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
@@ -478,23 +644,28 @@ a {
     padding-bottom: 23px;
 }
 
-.active, .accordion:hover {
+.active,
+.accordion:hover {
     background-color: #ccc;
 }
+
 .accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
     position: absolute;
     font-size: 13px;
     color: #777;
     bottom: -5px;
     right: 50%;
     transform: translate(50%, -50%);
-    
+
 }
 
 .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
 }
+
 .panel {
     padding: 0 18px;
     background-color: white;
@@ -504,12 +675,13 @@ a {
     text-align: center;
     border-radius: 25px;
 }
-.faq h1{
+
+.faq h1 {
     text-align: center;
     font-size: var(--h1-size);
 }
 
-footer{
+footer {
     display: flex;
     flex-direction: column;
     background-color: #EEEEEE;
@@ -519,30 +691,36 @@ footer{
     align-items: center;
     text-align: center;
 }
-.social-media >i{
+
+.social-media>i {
     margin: 0px 40px 0 40px;
     font-size: 1.5rem;
     font-style: normal;
 }
-.fa-discord:hover{
-    color:#7289da;
-    transform: scale(1.2);
-}
-.fa-twitter:hover{
-    color:#1DA1F2;
-    transform: scale(1.2);
-}
-.fa-medium-m:hover{
-    color:#444443;
+
+.fa-discord:hover {
+    color: #7289da;
     transform: scale(1.2);
 }
 
-.fab{
+.fa-twitter:hover {
+    color: #1DA1F2;
+    transform: scale(1.2);
+}
+
+.fa-medium-m:hover {
+    color: #444443;
+    transform: scale(1.2);
+}
+
+.fab {
     transition-duration: 500ms;
 }
-.social-media{
+
+.social-media {
     padding-bottom: 8px;
 }
+
 @media screen and (max-width: 1000px) {
     .grid-2 {
         grid-template-columns: 1fr;
@@ -560,54 +738,78 @@ footer{
         grid-template-rows: 1fr 1fr 1fr;
         row-gap: 3rem;
     }
-    :root{
+
+    :root {
         --h1-size: 2rem;
         --h2-size: 1.25rem;
         --highlight-size: 1.5rem;
         --p-size: 1rem;
     }
-    .topbar img{
+
+    .topbar img {
         display: none;
     }
-    .topbar ul li{
+
+    .topbar ul li {
         padding-right: 5px;
         padding-left: 5px;
 
     }
-    .r2::before, .r3::before,.r4::before,.r5::before,.r6::before,.r7::before,.r8::before,.r1::before{
+
+    .r2::before,
+    .r3::before,
+    .r4::before,
+    .r5::before,
+    .r6::before,
+    .r7::before,
+    .r8::before,
+    .r1::before {
         transform: scale(1);
         top: -0.5rem;
     }
-    .roadmap{
+
+    .roadmap {
         grid-row: 1/ span 3;
         box-shadow: none;
     }
-    .roadmap:hover{
+
+    .roadmap:hover {
         box-shadow: none;
     }
-    .about-us, .about-text, .image-box ,.roadmap, .image-gallery{
+
+    .about-us,
+    .about-text,
+    .image-box,
+    .roadmap,
+    .image-gallery {
         width: 100%;
         box-shadow: none;
     }
-    .third-section{
+
+    .third-section {
         width: 95%;
     }
-    .second-section{
+
+    .second-section {
         width: 95%;
         padding-bottom: 2rem;
         padding-top: 5rem;
     }
-    .topbar > *{
+
+    .topbar>* {
         margin: auto;
     }
-    .info .highlight{
+
+    .info .highlight {
         font-size: 3.5rem;
     }
-    .fourth-section{
+
+    .fourth-section {
         padding-top: 2rem;
     }
-    .roadmap ul li::after{
-        content:'';
+
+    .roadmap ul li::after {
+        content: '';
         position: absolute;
         width: 50%;
         height: 6px;
@@ -617,19 +819,28 @@ footer{
         left: 50%;
         transform: translateX(-50%);
     }
-    .fifth-section{
+
+    .fifth-section {
         padding-top: 1rem;
     }
-    .topbar .coming{
+
+    .topbar .coming {
         display: none;
     }
-    nav{
-        padding-top:2rem;
+
+    nav {
+        padding-top: 2rem;
     }
-    #second-section{
-        overflow-y:hidden;
-    }
-    .second-section{
+
+    #second-section {
         overflow-y: hidden;
+    }
+
+    .second-section {
+        overflow-y: hidden;
+    }
+    
+    .social-menu{
+        display: none;
     }
 }

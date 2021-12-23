@@ -533,17 +533,14 @@ a {
 }
 
 .roadmap {
-    grid-column: 1 / span 3;
     background-color: rgba(255, 255, 255, 0.8);
     width: 90%;
     height: max-content;
-    justify-self: center;
-    align-self: center;
     border-radius: 25px;
     border: 10px solid var(--red);
     box-shadow: 0px 0px 30px 7px rgba(0, 0, 0, 0.5);
     transition-duration: 700ms;
-
+    margin: auto;
 }
 
 .roadmap:hover {
@@ -697,7 +694,18 @@ footer {
     font-size: 1.5rem;
     font-style: normal;
 }
-
+.dc{
+    color:#7289da ;
+    text-shadow: none;
+}
+.tw{
+    color: #1DA1F2;
+    text-shadow: none;
+}
+.fa-medium-m{
+    color: #444443;
+    text-shadow: none;
+}
 .dc:hover{
     color: #7289da;
     transform: scale(1.2);
@@ -719,6 +727,16 @@ footer {
 
 .social-media {
     padding-bottom: 8px;
+}
+footer p{
+    width: 300px;
+    margin: auto;
+}
+footer > p {
+    margin: 20px auto;
+}
+footer p:first-child{
+    margin-bottom: 0;
 }
 
 @media screen and (max-width: 1000px) {

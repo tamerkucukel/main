@@ -1,5 +1,5 @@
 {
-  "homepage": "https://smurfysantas.com/mint",
+  "homepage": "https://create-react-app-rho-three.vercel.app/",
   "name": "candy-machine-mint",
   "version": "0.1.0",
   "private": true,
@@ -30,8 +30,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "prepublish": "npm run build",
-    "publish": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

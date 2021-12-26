@@ -95,6 +95,24 @@ a {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 2rem;
 }
+.lamp{
+    animation: lamp 2s 0s infinite;
+}
+@keyframes lamp {
+    0%{
+        background-color: white;
+        color: white;
+        text-shadow: var(--text-border-red);
+        border-color: var(--red);
+
+    }
+    50%{
+        background-color: var(--red);
+        color: var(--red);
+        text-shadow: var(--text-border-white);
+        border-color: white;
+    }
+}
 
 .wooble {
     animation: wooble 2s 0s infinite;

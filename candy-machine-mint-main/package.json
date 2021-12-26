@@ -1,4 +1,5 @@
 {
+  "homepage": "https://smurfysantas.com/mint",
   "name": "candy-machine-mint",
   "version": "0.1.0",
   "private": true,
@@ -29,6 +30,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "prepublish": "npm run build",
+    "publish": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

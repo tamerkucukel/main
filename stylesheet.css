@@ -145,6 +145,20 @@ a {
     width: 100%;
 }
 
+.coming{
+    background-color: white;
+    border-radius: 10px;
+    border: var(--red) 3px solid;
+    padding: 10px;
+    transition-duration: 250ms;
+}
+.coming:hover{
+    background-color: var(--red);
+    border-color: white;
+    text-shadow: var(--text-border-white);
+    color: var(--red);
+}
+
 #countdown {
     font-size: var(--h2-size);
 }
